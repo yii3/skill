@@ -35,7 +35,7 @@ record the resolved revision in the consuming application's lock file:
 
 ```bash
 composer config allow-plugins.llm/skills true
-composer require --dev llm/skills:1.15.0 "yii3/skill:^0.1@dev"
+composer require --dev llm/skills:1.15.0 yii3/skill:^0.1@dev
 composer skills:show
 ```
 
