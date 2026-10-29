@@ -5,100 +5,90 @@
         <source media="(prefers-color-scheme: light)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg">
         <img src="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg" alt="Yii Framework" width="80%">
     </picture>
-    <h1 align="center">Template</h1>
+    <h1 align="center">Yii3 Skills</h1>
     <br>
 </p>
 <!-- markdownlint-enable MD041 -->
 
 <p align="center">
-    <a href="https://github.com/yii2-extensions/template/actions/workflows/build.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/build.yml?style=for-the-badge&label=PHPUnit&logo=github" alt="PHPUnit">
+    <a href="https://github.com/yii3/skill/actions/workflows/quality.yml" target="_blank">
+        <img src="https://img.shields.io/github/actions/workflow/status/yii3/skill/quality.yml?style=for-the-badge&label=Quality&logo=github" alt="Quality">
     </a>
-    <a href="https://dashboard.stryker-mutator.io/reports/github.com/yii2-extensions/template/main" target="_blank">
-        <img src="https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyii2-extensions%2Ftemplate%2Fmain" alt="Mutation Testing">
-    </a>
-    <a href="https://github.com/yii2-extensions/template/actions/workflows/static.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/static.yml?style=for-the-badge&label=PHPStan&logo=github" alt="PHPStan">
-    </a>
-    <a href="https://github.com/yii2-extensions/template/actions/workflows/security.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/security.yml?style=for-the-badge&label=Security&logo=github" alt="Security">
+    <a href="https://github.com/yii3/skill/actions/workflows/security.yml" target="_blank">
+        <img src="https://img.shields.io/github/actions/workflow/status/yii3/skill/security.yml?style=for-the-badge&label=Security&logo=github" alt="Security">
     </a>
 </p>
 
 <p align="center">
-    <strong>A Yii2 extension template to create your own Yii2 extensions</strong><br>
-    <em>PHPUnit, PHPStan, Infection, ECS, and GitHub Actions ready out of the box</em>
+    <strong>Portable agent skills for Yii3 applications and packages</strong><br>
+    <em>Evidence-first application discovery, package development, and container integration</em>
 </p>
 
-## Features
+This package gives coding agents three focused workflows for Yii3 applications and packages. It discovers the components
+and runners an application actually uses, preserves package contracts, and avoids treating Yii3 as one monolithic
+framework package or imposing one project architecture.
 
-<picture>
-    <source media="(min-width: 768px)" srcset="./docs/svgs/features.svg">
-    <img src="./docs/svgs/features-mobile.svg" alt="Feature Overview" style="width: 100%;">
-</picture>
+## 🚀 Getting started
 
-## Quick start
-
-### Installation
+The package is in initial development and has no stable release yet. Install this repository explicitly and pin the
+development branch in the consuming application's lock file:
 
 ```bash
-composer require github_username/github_repository-name "yiisoft/yii2:^22.0@dev"
+composer config repositories.yii3-skill vcs https://github.com/yii3/skill
+composer config allow-plugins.llm/skills true
+composer require --dev llm/skills:1.15.0 yii3/skill:dev-main
+composer skills:show
 ```
 
-### Basic usage
+Create `skills.json` before installation when the project needs a non-default target, aliases, or an exact trust list.
+See the [installation guide](docs/installation.md) for the recommended configuration and local-checkout testing.
 
-Describe how to use your extension in a basic way.
+## 🧭 Skill catalog
 
-```php
-use yii\template\Example;
+| Skill                                    | Use it for                                                     |
+| ---------------------------------------- | -------------------------------------------------------------- |
+| [`yii3-application`][application-skill]  | Application shape, components, entry points, and evidence      |
+| [`yii3-container-integration`][di-skill] | Config, DI, providers, bootstrap, events, logs, and middleware |
+| [`yii3-package`][package-skill]          | Package contracts, dependencies, tests, and contributions      |
 
-$example = new Example();
+[application-skill]: skills/yii3-application/SKILL.md
+[di-skill]: skills/yii3-container-integration/SKILL.md
+[package-skill]: skills/yii3-package/SKILL.md
 
-$legacy = $example->getExample(true);
-```
+Package-specific skills remain with their owning packages. For example, `yii3/debug` owns `yii3-debug-integration`; this
+bundle explains how to discover such a workflow without copying it or claiming it was loaded.
 
-## Documentation
+## 📚 Documentation
 
-- 📚 [Installation guide](docs/installation.md)
-- ⚙️ [Configuration guide](docs/configuration.md)
-- 💡 [Usage examples](docs/examples.md)
-- 🧪 [Testing guide](docs/testing.md)
+- 📦 [Installation guide](docs/installation.md): Composer-first and manual installation.
+- ⚙️ [Configuration guide](docs/configuration.md): trust, synchronization, client paths, and package-owned skills.
+- 💡 [Usage examples](docs/examples.md): selecting a workflow and checking its result.
+- 🧪 [Testing guide](docs/testing.md): deterministic validation and repository quality checks.
+- 🧭 [Skill catalog](skills/README.md): scope and ownership of each portable bundle.
 
-The guides and the [API reference](https://yii2-framework.github.io/docs/extensions/template/reference/) generated from
-the PHPDoc in `src/` are published at <https://yii2-framework.github.io/docs/extensions/template/>.
+## 🤖 AI assistance
 
-## AI assistance
+Agents should read the installed `SKILL.md` and only the references it routes to. Repository installation, client
+discovery, instruction loading, and successful task behavior are separate facts; report each one honestly.
 
-AI agents: read the [documentation index](https://yii2-framework.github.io/docs/llms.txt) and fetch the Markdown version
-of a page by appending `index.md` to its URL. The
-[AI agents guide](https://yii2-framework.github.io/docs/project/ai-agents/) covers skill installation, client setup and
-verification.
+This repository does not yet publish a hosted AI documentation index. Use the versioned files in this repository or the
+exact installed package revision. Resolve package-specific instructions from the owning dependency rather than assuming
+this catalog contains every Yii3 package.
 
-- 🧭 [`yii2-framework` skill](https://yii2-framework.github.io/docs/guide/skills/yii2-framework/): Yii 22.0 application
-  conventions.
+## 📦 Package information
 
-The hosted documentation covers Yii 22.0. If it does not match the installed revision or is unavailable, use the
-[repository guides](#documentation), the source PHPDoc and the [changelog](CHANGELOG.md).
+The bundle contains instructions and referenced resources only. It has no Yii or application runtime dependencies.
+Composer is the primary distribution path; each directory under `skills/` is also a complete portable bundle.
 
-## Package information
+The first stable release has not been published. Until it is, treat `dev-main` as moving source and rely on the exact
+commit recorded by the consuming project.
 
-[![PHP](https://img.shields.io/badge/%3E%3D8.3-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.3/en.php)
-[![Yii 22.0.x](https://img.shields.io/badge/22.0.x-0073AA.svg?style=for-the-badge&logo=yii&logoColor=white)](https://github.com/yiisoft/yii2/tree/22.0)
+## Built with AI
 
-## Project status
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.com/claude-code)
+[![Reviewed by Codex](https://img.shields.io/badge/Reviewed%20by-Codex-10A37F.svg?style=for-the-badge&logo=openaigym&logoColor=white)](https://openai.com/codex)
+[![Reviewed by CodeRabbit](https://img.shields.io/badge/Reviewed%20by-CodeRabbit-FF570A.svg?style=for-the-badge&logo=coderabbit&logoColor=white)](https://www.coderabbit.ai)
 
-[![Codecov](https://img.shields.io/codecov/c/github/yii2-extensions/template.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/github/yii2-extensions/template)
-[![PHPStan Level Max](https://img.shields.io/badge/PHPStan-Level%20Max-4F5D95.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yii2-extensions/template/actions/workflows/static.yml)
-[![Quality](https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/quality.yml?style=for-the-badge&label=Quality&logo=github)](https://github.com/yii2-extensions/template/actions/workflows/quality.yml)
-[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/698621511?branch=main)
-
-## Our social networks
-
-[![Follow on X](https://img.shields.io/badge/-Follow%20on%20X-1DA1F2.svg?style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/Terabytesoftw)
-[![Follow on Facebook](https://img.shields.io/badge/-Follow%20on%20Facebook-1877F2.svg?style=for-the-badge&logo=facebook&logoColor=white&labelColor=000000)](https://www.facebook.com/wilmer.arambula.9)
-[![Join our Subreddit](https://img.shields.io/badge/-Join%20our%20Subreddit-FF4500.svg?style=for-the-badge&logo=reddit&logoColor=white&labelColor=000000)](https://www.reddit.com/r/Yii2/)
-[![Join on Telegram](https://img.shields.io/badge/-Join%20on%20Telegram-26A5E4.svg?style=for-the-badge&logo=telegram&logoColor=white&labelColor=000000)](https://t.me/yii_framework_in_english)
-
-## License
+## 📄 License
 
 [![License](https://img.shields.io/badge/License-BSD--3--Clause-brightgreen.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=555555)](LICENSE)
