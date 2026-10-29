@@ -7,7 +7,9 @@ Keep `llm/skills` permission in the consuming application's Composer configurati
 Keep `vendor-sources: false` unless package-declared external sources have been reviewed separately.
 
 Explicit Git and local-directory sources are trusted by their declaration. Pin a reviewed tag or commit when available.
-Remove an older donor before adding another source that provides the same skill name.
+These source overrides are for deliberate development or fork workflows; the normal `yii3/skill` installation resolves
+from Packagist without a VCS repository entry. Remove an older donor before adding another source that provides the same
+skill name.
 
 ## Client paths
 

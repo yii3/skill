@@ -28,19 +28,19 @@ Create `skills.json` in the application root before enabling the plugin:
 }
 ```
 
-The first stable `yii3/skill` release has not been published. Add the VCS repository and pin the current development
-branch explicitly:
+`yii3/skill` is published on Packagist, but it does not have a stable tagged release yet. Allow compatible `0.1`
+development versions directly from Packagist:
 
 ```bash
-composer config repositories.yii3-skill vcs https://github.com/yii3/skill
 composer config allow-plugins.llm/skills true
-composer require --dev llm/skills:1.15.0 yii3/skill:dev-main
+composer require --dev llm/skills:1.15.0 yii3/skill:^0.1@dev
 composer skills:show
 ```
 
-Composer records the resolved commit in `composer.lock`. `dev-main` remains a moving branch, so review its changes
-before updating. Replace that constraint with a stable release range only after the repository publishes a matching tag
-and the consuming project has reviewed it.
+`^0.1@dev` is a development-compatible constraint, not a stable version or an exact pin. It currently resolves the
+`0.1.x-dev` alias mapped to the moving `dev-main` branch. Composer records the resolved commit in `composer.lock`, so
+review changes before updating. A custom VCS repository is unnecessary for the Packagist package; reserve repository
+overrides for an unpublished fork or another deliberate development source.
 
 ## Local checkout testing
 
