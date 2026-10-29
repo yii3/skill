@@ -1,7 +1,7 @@
 {
     "name": "yii3/skill",
     "type": "library",
-    "description": "Portable agent skills for Yii3 application discovery and container integration.",
+    "description": "Portable agent skills for Yii3 applications, package development, and container integration.",
     "homepage": "https://github.com/yii3/skill",
     "keywords": [
         "agent-skills",

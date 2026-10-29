@@ -20,13 +20,13 @@
 </p>
 
 <p align="center">
-    <strong>Portable agent skills for Yii3 applications</strong><br>
-    <em>Evidence-first application discovery and container integration</em>
+    <strong>Portable agent skills for Yii3 applications and packages</strong><br>
+    <em>Evidence-first application discovery, package development, and container integration</em>
 </p>
 
-This package gives coding agents two focused workflows for Yii3 applications. It discovers the components and runners
-that an application actually uses instead of treating Yii3 as one monolithic framework package or imposing one project
-architecture.
+This package gives coding agents three focused workflows for Yii3 applications and packages. It discovers the components
+and runners an application actually uses, preserves package contracts, and avoids treating Yii3 as one monolithic
+framework package or imposing one project architecture.
 
 ## 🚀 Getting started
 
@@ -49,6 +49,7 @@ See the [installation guide](docs/installation.md) for the recommended configura
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | [`yii3-application`](skills/yii3-application/SKILL.md)                     | Application shape, installed components, entry points, and evidence  |
 | [`yii3-container-integration`](skills/yii3-container-integration/SKILL.md) | Config groups, DI, providers, bootstrap, events, logging, middleware |
+| [`yii3-package`](skills/yii3-package/SKILL.md)                             | Package contracts, dependencies, tests, docs, and contributions      |
 
 Package-specific skills remain with their owning packages. For example, `yii3/debug` owns `yii3-debug-integration`; this
 bundle explains how to discover such a workflow without copying it or claiming it was loaded.

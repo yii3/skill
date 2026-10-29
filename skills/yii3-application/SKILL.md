@@ -64,6 +64,9 @@ documentation. Never claim an unavailable skill was loaded.
   middleware, migrations, or service providers merely because an example has them.
 - Preserve all runners that share changed configuration. A working Site request does not prove the API, console, or a
   custom worker still builds.
+- Respect an explicit user choice between PHPUnit, Testo, or another supported test framework. When the user does not
+  choose, preserve the framework and conventions already used by the project; do not migrate frameworks or duplicate a
+  framework-owned skill merely to add a focused test.
 - Use existing Composer scripts and project checks where they establish the needed behavior. Do not install
   dependencies, run live migrations, or mutate external services without authorization.
 - When a dependency or entry-point choice is not inferable from the project, present that exact choice instead of
