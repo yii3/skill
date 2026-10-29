@@ -30,13 +30,12 @@ framework package or imposing one project architecture.
 
 ## 🚀 Getting started
 
-The package is in initial development and has no stable release yet. Install this repository explicitly and pin the
-development branch in the consuming application's lock file:
+The package is published on Packagist but has no stable release yet. Allow compatible `0.1` development versions and
+record the resolved revision in the consuming application's lock file:
 
 ```bash
-composer config repositories.yii3-skill vcs https://github.com/yii3/skill
 composer config allow-plugins.llm/skills true
-composer require --dev llm/skills:1.15.0 yii3/skill:dev-main
+composer require --dev llm/skills:1.15.0 "yii3/skill:^0.1@dev"
 composer skills:show
 ```
 
@@ -80,8 +79,9 @@ this catalog contains every Yii3 package.
 The bundle contains instructions and referenced resources only. It has no Yii or application runtime dependencies.
 Composer is the primary distribution path; each directory under `skills/` is also a complete portable bundle.
 
-The first stable release has not been published. Until it is, treat `dev-main` as moving source and rely on the exact
-commit recorded by the consuming project.
+The package is available from Packagist, but the first stable release has not been published. The `^0.1@dev` constraint
+currently resolves the `0.1.x-dev` alias mapped to the moving `dev-main` branch; the exact revision comes from the
+consuming project's lock file.
 
 ## Built with AI
 
