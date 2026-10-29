@@ -25,29 +25,18 @@
 *.gif   binary
 *.ttf   binary
 
-# Exclude files from the archive
-/.agents                        export-ignore
-/.claude                        export-ignore
+# Exclude development and private files; retain guides and portable skill resources.
 /.editorconfig                  export-ignore
 /.gitattributes                 export-ignore
 /.github                        export-ignore
 /.gitignore                     export-ignore
 /.prettierignore                export-ignore
 /.prettierrc.json               export-ignore
-/.styleci.yml                   export-ignore
-/AGENTS.md                      export-ignore
-/codeception.yml                export-ignore
-/codecov.yml                    export-ignore
-/composer-require-checker.json  export-ignore
-/docs                           export-ignore
-/ecs.php                        export-ignore
-/infection.json*                export-ignore
+/composer.lock                  export-ignore
 /internal                       export-ignore
-/phpstan*.neon*                 export-ignore
-/phpunit.xml.dist               export-ignore
-/rector.php                     export-ignore
-/runtime                        export-ignore
-/tests                          export-ignore
+/node_modules                   export-ignore
+/tools                          export-ignore
+/vendor                         export-ignore
 
 # Avoid merge conflicts in CHANGELOG
 # https://about.gitlab.com/2015/02/10/gitlab-reduced-merge-conflicts-by-90-percent-with-changelog-placeholders/

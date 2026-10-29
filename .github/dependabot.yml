@@ -11,12 +11,3 @@ updates:
     groups:
       github-actions:
         patterns: ["*"]
-
-  # Maintain dependencies for Composer
-  - package-ecosystem: "composer"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    cooldown:
-      default-days: 7
-    versioning-strategy: increase-if-necessary
