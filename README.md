@@ -45,11 +45,15 @@ See the [installation guide](docs/installation.md) for the recommended configura
 
 ## 🧭 Skill catalog
 
-| Skill                                                                      | Use it for                                                           |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| [`yii3-application`](skills/yii3-application/SKILL.md)                     | Application shape, installed components, entry points, and evidence  |
-| [`yii3-container-integration`](skills/yii3-container-integration/SKILL.md) | Config groups, DI, providers, bootstrap, events, logging, middleware |
-| [`yii3-package`](skills/yii3-package/SKILL.md)                             | Package contracts, dependencies, tests, docs, and contributions      |
+| Skill                                    | Use it for                                                     |
+| ---------------------------------------- | -------------------------------------------------------------- |
+| [`yii3-application`][application-skill]  | Application shape, components, entry points, and evidence      |
+| [`yii3-container-integration`][di-skill] | Config, DI, providers, bootstrap, events, logs, and middleware |
+| [`yii3-package`][package-skill]          | Package contracts, dependencies, tests, and contributions      |
+
+[application-skill]: skills/yii3-application/SKILL.md
+[di-skill]: skills/yii3-container-integration/SKILL.md
+[package-skill]: skills/yii3-package/SKILL.md
 
 Package-specific skills remain with their owning packages. For example, `yii3/debug` owns `yii3-debug-integration`; this
 bundle explains how to discover such a workflow without copying it or claiming it was loaded.
@@ -78,6 +82,12 @@ Composer is the primary distribution path; each directory under `skills/` is als
 
 The first stable release has not been published. Until it is, treat `dev-main` as moving source and rely on the exact
 commit recorded by the consuming project.
+
+## Built with AI
+
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.com/claude-code)
+[![Reviewed by Codex](https://img.shields.io/badge/Reviewed%20by-Codex-10A37F.svg?style=for-the-badge&logo=openaigym&logoColor=white)](https://openai.com/codex)
+[![Reviewed by CodeRabbit](https://img.shields.io/badge/Reviewed%20by-CodeRabbit-FF570A.svg?style=for-the-badge&logo=coderabbit&logoColor=white)](https://www.coderabbit.ai)
 
 ## 📄 License
 

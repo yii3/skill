@@ -21,6 +21,7 @@ Each example preserves the exact prompt used for cross-client forward tests and 
 - [Add a Site About page](prompts/application-about-route.md).
 - [Bind and inject an application service](prompts/container-service-binding.md).
 - [Complete development-only debug wiring](prompts/container-debug-integration.md).
+- [Evaluate a Yii3 package](prompts/yii3-package.md).
 
 The results are evidence from disposable snapshots, not a model ranking or a patch to copy blindly. Client acceptance,
 model identity, skill loading, generated artifacts, and executed checks are reported separately.
@@ -29,9 +30,10 @@ In result tables, `default` means the client's default effort; no internal reaso
 
 ## Invoke and verify
 
-Start a fresh client session from the application root and confirm the intended workflow appears in the client's skill
-interface. Invoke `$yii3-application` for an application-level change, `$yii3-container-integration` for configuration
-and container wiring, or `$yii3-package` for package development, review, tests, or documentation.
+Start a fresh client session from the project root and confirm the intended workflow appears in the client's skill
+interface. Use an application root for application and container workflows, or a package root for package work. Invoke
+`$yii3-application` for an application-level change, `$yii3-container-integration` for configuration and container
+wiring, or `$yii3-package` for package development, review, tests, or documentation.
 
 Ask the agent to report the evidence it used. A useful application report distinguishes:
 
@@ -44,12 +46,16 @@ A useful package report distinguishes:
 
 - general-purpose and Yii-specific package boundaries;
 - the selected revision, supported public contract, and release status;
-- the repository's existing test harness and an explicit user choice of PHPUnit or Testo;
+- the repository's existing test harness or another supported framework explicitly selected by the user;
 - targeted behavioral evidence, supporting quality checks, and remaining environment limits;
 - documentation, changelog, upgrade, or release work that the requested change actually requires.
 
-After a change, run the application's existing targeted checks. A rebuilt merge plan proves configuration discovery;
-container resolution proves definitions can be built; an exercised request or command proves the intended entry point
-consumed the wiring. These are separate acceptance results.
+For application changes, run the application's existing targeted checks. A rebuilt merge plan proves configuration
+discovery; container resolution proves definitions can be built; an exercised request or command proves the intended
+entry point consumed the wiring. These are separate acceptance results.
+
+For package changes, use the project's existing test framework or the supported framework selected by the user. Run the
+relevant tests, static analysis, style checks, and focused regression checks. Do not require an application runtime
+unless the package contract or requested integration genuinely depends on one.
 
 [Back to documentation](../README.md#-documentation)
